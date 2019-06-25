@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6"><h3 class="text-center">Search for Weather:
+      <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="text"
+          id="weatherLocation"
+          aria-describedby="weatherLocation"
+          placeholder="Please input a Location"
+          formControlName="location"
+        />
+       </div>
+       <div class="text-center">
+        <button type="submit" class="btn btn-success btn-md">
+          Search for the weather</button>
+       </div>
+     </form>
+
+    </h3></div>
+    <div class="col-md-6 "><h3 class="text-center">Weather Details:</h3>
+    <span>
+      <h3>location:</h3>
+        <p class="text-center"><b>Country</b> {{this.weatherData?.location.country}}</p>
+        <p class="text-center"><b>Country</b> {{this.weatherData?.location.lat}}</p>
+        <p class="text-center"><b>Country</b> {{this.weatherData?.location.localtime}}</p>
+        <p class="text-center"><b>Country</b> {{this.weatherData?.location.localtime_epoch}}</p>
+        <p class="text-center"><b>Country</b> {{this.weatherData?.location.lon}}</p>
+        <p class="text-center"><b>Country</b> {{this.weatherData?.location.name}}</p>
+        <p class="text-center"><b>Country</b> {{this.weatherData?.location.region}}</p>
+        <p class="text-center"><b>Country</b> {{this.weatherData?.location.tz_id}}</p>
+    </span>
+    <span>
+      <h3>Current:</h3>
+      <p class="text-center"><b>cloud:</b>{{this.weatherData?.current.cloud}}</p>
+      <p class="text-center"><b>condition:</b>{{this.weatherData?.current.condition.text}}</p>
+      <p class="text-center"><b>feelslike_c:</b>{{this.weatherData?.current.feelslike_c}}</p>
+      <p class="text-center"><b>feelslike_f:</b>{{this.weatherData?.current.feelslike_f}}</p>
+      <p class="text-center"><b>gust_kph:</b>{{this.weatherData?.current.gust_kph}}</p>
+      <p class="text-center"><b>gust_mph:</b>{{this.weatherData?.current.gust_mph}}</p>
+      <p class="text-center"><b>humidity:</b>{{this.weatherData?.current.humidity}}</p>
+      <p class="text-center"><b>is_day:</b>{{this.weatherData?.current.is_day}}</p>
+    </span>
+
+
+    </div>
+  </div>
+</div>
